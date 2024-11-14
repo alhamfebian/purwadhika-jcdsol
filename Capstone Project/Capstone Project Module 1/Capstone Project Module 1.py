@@ -5,7 +5,7 @@ print('Silahkan Pilih Sistem Yang Ingin Anda Jalankan\n')
 
 # Global Variable
 dataKaryawan = {
-    # 000X adalah ID Setiap Karyawan (Unique)
+
     # jenisKelamin: L = Laki-Laki, P = Perempuan
     'Andi Pratama': {
         'jenisKelamin': 'L',
@@ -79,6 +79,10 @@ def menghapusKaryawanBerdasarkanNama(namaKaryawanYangAkanDiHapus):
         del dataKaryawan[namaKaryawanYangAkanDiHapus]
 
 # Fungsi untuk update data karyawan PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 4)
+# Data yang bisa diupdate hanya jenis kelamin dan divisi, Nama tidak bisa diupdate karena merupakan primary key
+def updateDataKaryawan(namaKaryawanYangAkanDiubah, dataYangInginDiubah, valueDataYangBaru):
+    
+    dataKaryawan[namaKaryawanYangAkanDiHapus][dataYangInginDiubah] = valueDataYangBaru
 
 # Fungsi untuk recapt data karyawan PT. Selalu Pusing berdasarkan Divis (Menu Sistem Nomor 5)
 
