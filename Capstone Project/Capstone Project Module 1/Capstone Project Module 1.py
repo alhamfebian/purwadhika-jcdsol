@@ -8,24 +8,24 @@ dataKaryawan = {
 
     # jenisKelamin: L = Laki-Laki, P = Perempuan
     'Andi Pratama': {
-        'jenisKelamin': 'L',
-        'divisi': 'Pemasaran'
+        'Jenis Kelamin': 'L',
+        'Divisi': 'Pemasaran'
     },
     'Siti Aisyah': {
-        'jenisKelamin': 'P',
-        'divisi': 'Produk'
+        'Jenis Kelamin': 'P',
+        'Divisi': 'Produk'
     },
     'Budi Santoso': {
-        'jenisKelamin': 'L',
-        'divisi': 'Keuangan'
+        'Jenis Kelamin': 'L',
+        'Divisi': 'Keuangan'
     },
     'Dian Sari': {
-        'jenisKelamin': 'P',
-        'divisi': 'Penjualan'
+        'Jenis Kelamin': 'P',
+        'Divisi': 'Penjualan'
     },
     'Rudi Setiawan': {
-        'jenisKelamin': 'L',
-        'divisi': 'Operasional'
+        'Jenis Kelamin': 'L',
+        'Divisi': 'Operasional'
     }
 }
 
@@ -47,7 +47,7 @@ printListOfSystemMenu()
 def menampilkanSemuaDataKaryawan():
     print("|Nama Lengkap\t| Jenis Kelamin | Divisi\t|\n")
     for key, item in dataKaryawan.items():
-        print(f"|{key} | {item['jenisKelamin']}\t\t| {item['divisi']}\t|")
+        print(f"|{key} | {item['Jenis Kelamin']}\t\t| {item['Divisi']}\t|")
 
 # Fungsi untuk menambah data karyawan baru (Menu Sistem Nomor 2)
 def menambahKaryawanBaru(namaLengkapKaryawanBaru = 'Asep', jenisKelaminKaryawanBaru = 'L', divisiKaryawanBaru = 'Teknologi'):
@@ -56,14 +56,14 @@ def menambahKaryawanBaru(namaLengkapKaryawanBaru = 'Asep', jenisKelaminKaryawanB
         print('Nama Karyawan Sudah Ada, Silahkan Masukan Nama Karyawan Yang Lain')
         tempNamaKaryawan = input('Masukin Nama Karyawan Baru: ')
         dataKaryawan[tempNamaKaryawan] = {
-            'jenisKelamin': jenisKelaminKaryawanBaru,
-            'divisi': divisiKaryawanBaru
+            'Jenis Kelamin': jenisKelaminKaryawanBaru,
+            'Divisi': divisiKaryawanBaru
         }
     
     else:
         dataKaryawan[namaLengkapKaryawanBaru] = {
-            'jenisKelamin': jenisKelaminKaryawanBaru,
-            'divisi': divisiKaryawanBaru
+            'Jenis Kelamin': jenisKelaminKaryawanBaru,
+            'Divisi': divisiKaryawanBaru
         }
 
     
@@ -81,10 +81,19 @@ def menghapusKaryawanBerdasarkanNama(namaKaryawanYangAkanDiHapus):
 # Fungsi untuk update data karyawan PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 4)
 # Data yang bisa diupdate hanya jenis kelamin dan divisi, Nama tidak bisa diupdate karena merupakan primary key
 def updateDataKaryawan(namaKaryawanYangAkanDiubah, dataYangInginDiubah, valueDataYangBaru):
-    
-    dataKaryawan[namaKaryawanYangAkanDiHapus][dataYangInginDiubah] = valueDataYangBaru
 
-# Fungsi untuk recapt data karyawan PT. Selalu Pusing berdasarkan Divis (Menu Sistem Nomor 5)
+    if (namaKaryawanYangAkanDiubah in dataKaryawan):
+        dataKaryawan[namaKaryawanYangAkanDiubah][dataYangInginDiubah] = valueDataYangBaru
+    else:
+        print('Nama Karyawan Tidak Ada, Silahkan Masukan Kembali Nama Karyawan Yang Benar')
+        namaKaryawanYangAkanDiubah = input('Pilih Nama Karyawan Yang Ingin Di Update: ')
+        dataKaryawan[namaKaryawanYangAkanDiubah][dataYangInginDiubah] = valueDataYangBaru
+
+# Fungsi untuk recap data karyawan PT. Selalu Pusing berdasarkan Divis (Menu Sistem Nomor 5)
+# Fungsi ini untuk mengetahui berapa jumlah total karyawan PT. Selalu Pusing
+def recapDataKaryawan():
+    print(f'Total Karyawan PT. Selalu Pusing adalah: {len(dataKaryawan)}')
+
 
 try:
     userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5): '))
@@ -120,9 +129,35 @@ while userInput != 6:
         userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5): '))
 
     elif (userInput == 4):
-        print(userInput)
+        
+        kumpulanKaryawan = list(dataKaryawan.keys())
+        kumpulanFieldDataKaryawan = []
+
+        for firstKey, value in dataKaryawan.items():
+            for secondKey, item in value.items():
+                kumpulanFieldDataKaryawan.append(secondKey)
+
+        print('Berikut Adalah Nama-Nama Karyawan Yang Ada Di PT. Selalu Pusing')
+
+        for item in kumpulanKaryawan:
+            print(item)
+        
+        namaKaryawanYangAkanDiubah = input('Pilih Nama Karyawan Yang Ingin Di Update: ')
+
+        for item in kumpulanFieldDataKaryawan[0:2]:
+            print(item)
+
+        dataYangInginDiubah = input('Pilih Field Yang Ingin Di Update: ')
+        valueDataYangBaru = input('Masukan Data Baru: ')
+
+
+        updateDataKaryawan(namaKaryawanYangAkanDiubah, dataYangInginDiubah, valueDataYangBaru)
+
+        userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5): '))
     elif (userInput == 5):
-        print()
+        recapDataKaryawan()
+
+        userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5): '))
     else:
         print('Terima Kasih, Sampai Bertemu Di Lain Waktu! :)')
         break
