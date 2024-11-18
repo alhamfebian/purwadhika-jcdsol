@@ -490,7 +490,7 @@ while isLoopingEligible:
     ##################################################################### END OF USER INPUT = 7 #############################################################
 
 
-    # Jika user memilih menu untuk melihat recap total gaji karyawan PT.Selalu Pusing per divisi per bulan
+    # Jika user memilih menu untuk melihat rata-rata gaji karyawan PT.Selalu Pusing per divisi per bulan
     elif (userInput == 8):
         userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji Per Divisi PT.Selalu Pusing Per Bulan? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
 
