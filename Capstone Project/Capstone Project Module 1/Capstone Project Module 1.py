@@ -89,12 +89,12 @@ def menghapusKaryawanBerdasarkanNama(divisiYangDipilihUser, karyawanYangDipilihU
 
     del dataPerusahaan[divisiYangDipilihUser][karyawanYangDipilihUser]
 
-# Fungsi untuk update data karyawan PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 4)
+# Fungsi untuk update data karyawan PT. Selalu Pusing (Menu Sistem Nomor 4)
 def updateDataKaryawan(divisiYangDipilihUser, karyawanYangDipilihUser, fieldYangInginDiubah, valueUntukFieldBaru):
     dataPerusahaan[divisiYangDipilihUser][karyawanYangDipilihUser][fieldYangInginDiubah] = valueUntukFieldBaru
 
 
-# Fungsi untuk memindahkan karyawan ke divisi lain PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 5)
+# Fungsi untuk memindahkan karyawan ke divisi lain PT. Selalu Pusing (Menu Sistem Nomor 5)
 def memindahkanKaryawanKeDivisiLain(divisiKaryawanYangLama, namaKaryawanYangInginDipindah, divisiKaryawanBaru):
     dataPerusahaan[divisiKaryawanBaru][namaKaryawanYangInginDipindah] = {
         'Jenis Kelamin': dataPerusahaan[divisiKaryawanYangLama][namaKaryawanYangInginDipindah]['Jenis Kelamin'],
