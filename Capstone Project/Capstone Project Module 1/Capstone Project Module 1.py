@@ -191,10 +191,10 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk menambah karyawan baru 
     elif (userInput == 2):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menambahkan Data Karyawan Baru? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menambahkan Data Karyawan Baru? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
@@ -239,10 +239,10 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk menghapus data karyawan  
     elif (userInput == 3):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menghapus Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menghapus Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
@@ -286,10 +286,10 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk meng-update data karyawan 
     elif (userInput == 4):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Mengubah Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Mengubah Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
@@ -370,7 +370,7 @@ while isLoopingEligible:
         userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Memindah Karyawan Ke Divisi Lain? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
