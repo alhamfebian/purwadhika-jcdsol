@@ -128,7 +128,7 @@ def rataRataGajiKaryawanPerDivisi():
             totalGajiKaryawanPerDivisi += dataPerusahaan[firstKey][secondKey]['Gaji']
 
         totalRataRataGajiPerDivisi = totalGajiKaryawanPerDivisi / len(dataPerusahaan[firstKey])
-        print(f'Total Gaji Divisi {firstKey} adalah: Rp{totalGajiKaryawanPerDivisi:,.0f}')
+        print(f'\nTotal Gaji Divisi {firstKey} adalah: Rp{totalGajiKaryawanPerDivisi:,.0f}')
         print(f'Rata-Rata Gaji Divisi {firstKey} Per Bulan adalah: Rp{totalRataRataGajiPerDivisi:,.0f} dengan jumlah karyawan di divisi {firstKey} adalah: {len(dataPerusahaan[firstKey])}')
 
         # Untuk me-reset perhitungan total dan rata-rata gaji karyawan per divisi
@@ -150,8 +150,8 @@ def rataRataGajiPerusahaan():
     totalRataRataGajiKaryawan = totalGajiKaryawan / totalKaryawan
 
     print(f'\nTotal Gaji Karyawan PT.Selalu Pusing adalah: Rp{totalGajiKaryawan:,.0f}')
-    print(f'Total Karyawan PT.Selalu Pusing adalah: {totalKaryawan} karyawan')
-    print(f'Rata-Rata Gaji Karyawan PT.Selalu Pusing adalah: Rp{totalRataRataGajiKaryawan:,.0f}')
+    print(f'\nTotal Karyawan PT.Selalu Pusing adalah: {totalKaryawan} karyawan')
+    print(f'\nRata-Rata Gaji Karyawan PT.Selalu Pusing adalah: Rp{totalRataRataGajiKaryawan:,.0f}')
 
 
 # Fungsi untuk validasi input user untuk field 'Jenis Kelamin'
@@ -168,10 +168,10 @@ def validasiJenisKelamin(dataJenisKelamin):
 # Menampilkan menu dan menerima input pertama kali dari user
 printListOfSystemMenu()
 try:
-    userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+    userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 except:
     print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-    userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+    userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
 while isLoopingEligible:
 
@@ -182,10 +182,10 @@ while isLoopingEligible:
         # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
         printListOfSystemMenu()
         try:
-            userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+            userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
         except:
             print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-            userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+            userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 1 ###########################################################
 
 
@@ -199,10 +199,10 @@ while isLoopingEligible:
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
         
         else:
             listDivisi = list(dataPerusahaan.keys())
@@ -230,10 +230,10 @@ while isLoopingEligible:
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 2 ##############################################################
 
 
@@ -247,10 +247,10 @@ while isLoopingEligible:
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
         
         else:
             print('Berikut Adalah Divisi Yang Ada Di PT. Selalu Pusing')
@@ -277,10 +277,10 @@ while isLoopingEligible:
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 3 ##############################################################
 
 
@@ -294,10 +294,10 @@ while isLoopingEligible:
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
         else:
             print('\nBerikut Adalah Divisi Yang Ada Di PT. Selalu Pusing')
@@ -358,16 +358,16 @@ while isLoopingEligible:
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 4 #############################################################
 
 
     # Jika user memilih menu untuk memindahkan karyawan ke divisi lain
     elif (userInput == 5):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Memindah Karyawan Ke Divisi Lain? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Memindah Karyawan Ke Divisi Lain? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
@@ -375,10 +375,10 @@ while isLoopingEligible:
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
         else:
             menampilkanSemuaDataKaryawan()
@@ -425,27 +425,27 @@ while isLoopingEligible:
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 5 ##############################################################
     
 
     # Jika user memilih menu untuk melihat recap total karyawan PT.Selalu Pusing 
     elif (userInput == 6):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Recap Total Karyawan PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Recap Total Karyawan PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
         else:
             recapTotalJumlahKaryawan()
@@ -453,27 +453,27 @@ while isLoopingEligible:
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 6 ##############################################################
 
 
     # Jika user memilih menu untuk melihat recap total karyawan PT.Selalu Pusing Per divisi
     elif (userInput == 7):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Recap Total Karyawan Per Divisi PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Recap Total Karyawan Per Divisi PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
         else:
             recapTotalJumlahKaryawanPerDivisi()
@@ -481,64 +481,64 @@ while isLoopingEligible:
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 7 #############################################################
 
 
     # Jika user memilih menu untuk melihat rata-rata gaji karyawan PT.Selalu Pusing per divisi per bulan
     elif (userInput == 8):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji Per Divisi PT.Selalu Pusing Per Bulan? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji Per Divisi PT.Selalu Pusing Per Bulan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
         else:
             rataRataGajiKaryawanPerDivisi()
 
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 8 #############################################################
 
 
     # Jika user memilih menu untuk mengetahui rata-rata gaji PT.Selalu Pusing 
     elif (userInput == 9):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
+        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
-            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama')
+            userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         if userInginMenlanjutkanPilihan == 'T':
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
         else:
             rataRataGajiPerusahaan()
 
             # Menampilkan menu untuk memudahkan user memilih menu yang ingin dijalankan
             printListOfSystemMenu()
             try:
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
             except:
                 print('Input Harus Dalam Bentuk Angka (eg. 1,2,3,4,5,6,7,8,9,99)')
-                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem'))
+                userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
     ##################################################################### END OF USER INPUT = 9 ##############################################################
 
 
