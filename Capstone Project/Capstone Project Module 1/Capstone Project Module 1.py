@@ -73,8 +73,6 @@ def menambahKaryawanBaru(divisiKaryawanBaru, namaLengkapKaryawanBaru, jenisKelam
 
     while tempNamaKaryawan in dataPerusahaan[divisiKaryawanBaru]:
         tempNamaKaryawan = input('Nama Karyawan Sudah Ada, Silahkan Masukan Nama Karyawan Yang Lain: ')
-
-    jenisKelaminKaryawanBaru = validasiJenisKelamin(jenisKelaminKaryawanBaru)
     
     dataPerusahaan[divisiKaryawanBaru][tempNamaKaryawan] = {
         'Jenis Kelamin': jenisKelaminKaryawanBaru,
@@ -239,7 +237,7 @@ while isLoopingEligible:
     ##################################################################### END OF USER INPUT = 2 ##############################################################
 
 
-    # Jika user memilih menu untuk menghapus data karyawan baru 
+    # Jika user memilih menu untuk menghapus data karyawan  
     elif (userInput == 3):
         userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menghapus Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama')
 
