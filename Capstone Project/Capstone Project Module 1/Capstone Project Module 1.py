@@ -61,7 +61,7 @@ def printListOfSystemMenu() :
 
 # Fungsi untuk menampilkan semua data karyawan PT. Selalu Pusing (Menu Sistem Nomor 1)
 def menampilkanSemuaDataKaryawan():
-    print("| Nama Lengkap\t| Jenis Kelamin | Gaji\t| Divis |\n")
+    print("| Nama Lengkap\t| Jenis Kelamin | Gaji\t| Divisi |\n")
     for firstKey, value in dataPerusahaan.items():
         for secondKey, item in value.items():
             print(f"| {secondKey}\t| {item['Jenis Kelamin']}\t\t| Rp{item['Gaji']:,.0f}\t| {firstKey} |")
