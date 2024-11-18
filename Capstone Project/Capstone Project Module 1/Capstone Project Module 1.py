@@ -94,7 +94,7 @@ def menghapusKaryawanBerdasarkanNama(divisiYangDipilihUser, karyawanYangDipilihU
 
     print(f'\nData Karyawan {karyawanYangDipilihUser} berhasil dihapus dari divisi {divisiYangDipilihUser}! Untuk melihat lebih detail, silahkan pilih menu nomor 1')
 
-# Fungsi untuk update data karyawan PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 4)
+# Fungsi untuk update data karyawan PT. Selalu Pusing (Menu Sistem Nomor 4)
 # Untuk saat ini, scope data yang bisa diubah Jenis Kelamin dan Gaji
 def updateDataKaryawan(divisiYangDipilihUser, karyawanYangDipilihUser, fieldYangInginDiubah, valueUntukFieldBaru):
     dataPerusahaan[divisiYangDipilihUser][karyawanYangDipilihUser][fieldYangInginDiubah] = valueUntukFieldBaru
@@ -102,7 +102,7 @@ def updateDataKaryawan(divisiYangDipilihUser, karyawanYangDipilihUser, fieldYang
     print(f'\nData {fieldYangInginDiubah} untuk Karyawan {karyawanYangDipilihUser} berhasil diubah! Untuk melihat lebih detail, silahkan pilih menu nomor 1')
 
 
-# Fungsi untuk memindahkan karyawan ke divisi lain PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 5)
+# Fungsi untuk memindahkan karyawan ke divisi lain PT. Selalu Pusing (Menu Sistem Nomor 5)
 def memindahkanKaryawanKeDivisiLain(divisiKaryawanYangLama, namaKaryawanYangInginDipindah, divisiKaryawanBaru):
     dataPerusahaan[divisiKaryawanBaru][namaKaryawanYangInginDipindah] = {
         'Jenis Kelamin': dataPerusahaan[divisiKaryawanYangLama][namaKaryawanYangInginDipindah]['Jenis Kelamin'],
@@ -249,7 +249,7 @@ while isLoopingEligible:
     ##################################################################### END OF USER INPUT = 2 ##############################################################
 
 
-    # Jika user memilih menu untuk menghapus data karyawan baru 
+    # Jika user memilih menu untuk menghapus data karyawan 
     elif (userInput == 3):
         userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Menghapus Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
