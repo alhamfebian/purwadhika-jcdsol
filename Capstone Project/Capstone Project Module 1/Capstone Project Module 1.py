@@ -30,7 +30,7 @@ dataPerusahaan = {
     'Penjualan': {
         'Rudi Setiawan': {
             'Jenis Kelamin': 'L',
-            'Gaji': 150000000
+            'Gaji': 15000000
         },
         'Rani Putri': {
             'Jenis Kelamin': 'P',
@@ -61,7 +61,7 @@ def printListOfSystemMenu() :
 
 # Fungsi untuk menampilkan semua data karyawan PT. Selalu Pusing (Menu Sistem Nomor 1)
 def menampilkanSemuaDataKaryawan():
-    print("| Nama Lengkap\t| Jenis Kelamin | Gaji\t| Divisi |\n")
+    print("| Nama Lengkap\t| Jenis Kelamin | Gaji\t\t| Divisi    |\n")
     for firstKey, value in dataPerusahaan.items():
         for secondKey, item in value.items():
             print(f"| {secondKey}\t| {item['Jenis Kelamin']}\t\t| Rp{item['Gaji']:,.0f}\t| {firstKey} |")
@@ -71,13 +71,18 @@ def menampilkanSemuaDataKaryawan():
 def menambahKaryawanBaru(divisiKaryawanBaru, namaLengkapKaryawanBaru, jenisKelaminKaryawanBaru, gajiKaryawanBaru):
     tempNamaKaryawan = namaLengkapKaryawanBaru
 
+    # Untuk validasi apakah nama karyawan sudah atau belum di divisi tersebut
     while tempNamaKaryawan in dataPerusahaan[divisiKaryawanBaru]:
         tempNamaKaryawan = input('Nama Karyawan Sudah Ada, Silahkan Masukan Nama Karyawan Yang Lain: ')
+
+    jenisKelaminKaryawanBaru = validasiJenisKelamin(jenisKelaminKaryawanBaru)
     
     dataPerusahaan[divisiKaryawanBaru][tempNamaKaryawan] = {
         'Jenis Kelamin': jenisKelaminKaryawanBaru,
         'Gaji': gajiKaryawanBaru
     }
+
+    print(f'\nKaryawan {namaLengkapKaryawanBaru} berhasil ditambahkan di divisi {divisiKaryawanBaru}! Untuk melihat lebih detail, silahkan pilih menu nomor 1')
 
     
 # Fungsi untuk menghapus data karyawan PT. Selalu Pusing (Menu Sistem Nomor 3)
@@ -87,12 +92,17 @@ def menghapusKaryawanBerdasarkanNama(divisiYangDipilihUser, karyawanYangDipilihU
 
     del dataPerusahaan[divisiYangDipilihUser][karyawanYangDipilihUser]
 
-# Fungsi untuk update data karyawan PT. Selalu Pusing (Menu Sistem Nomor 4)
+    print(f'\nData Karyawan {karyawanYangDipilihUser} berhasil dihapus dari divisi {divisiYangDipilihUser}! Untuk melihat lebih detail, silahkan pilih menu nomor 1')
+
+# Fungsi untuk update data karyawan PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 4)
+# Untuk saat ini, scope data yang bisa diubah Jenis Kelamin dan Gaji
 def updateDataKaryawan(divisiYangDipilihUser, karyawanYangDipilihUser, fieldYangInginDiubah, valueUntukFieldBaru):
     dataPerusahaan[divisiYangDipilihUser][karyawanYangDipilihUser][fieldYangInginDiubah] = valueUntukFieldBaru
 
+    print(f'\nData {fieldYangInginDiubah} untuk Karyawan {karyawanYangDipilihUser} berhasil diubah! Untuk melihat lebih detail, silahkan pilih menu nomor 1')
 
-# Fungsi untuk memindahkan karyawan ke divisi lain PT. Selalu Pusing (Menu Sistem Nomor 5)
+
+# Fungsi untuk memindahkan karyawan ke divisi lain PT. Selalu Pusing menggunakan ID sebagai primary key (Menu Sistem Nomor 5)
 def memindahkanKaryawanKeDivisiLain(divisiKaryawanYangLama, namaKaryawanYangInginDipindah, divisiKaryawanBaru):
     dataPerusahaan[divisiKaryawanBaru][namaKaryawanYangInginDipindah] = {
         'Jenis Kelamin': dataPerusahaan[divisiKaryawanYangLama][namaKaryawanYangInginDipindah]['Jenis Kelamin'],
@@ -100,6 +110,8 @@ def memindahkanKaryawanKeDivisiLain(divisiKaryawanYangLama, namaKaryawanYangIngi
     }
 
     del dataPerusahaan[divisiKaryawanYangLama][namaKaryawanYangInginDipindah]
+
+    print(f'\nKaryawan {namaKaryawanYangInginDipindah} berhasil dipindahkan dari divisi {divisiKaryawanYangLama} ke divisi {divisiKaryawanBaru}! Untuk melihat lebih detail, silahkan pilih menu nomor 1')
     
 
 # Fungsi ini untuk mengetahui berapa jumlah total karyawan PT. Selalu Pusing (Menu Sistem Nomor 6)
@@ -115,7 +127,7 @@ def recapTotalJumlahKaryawan():
 # Fungsi ini untuk mengetahui berapa jumlah total karyawan PT. Selalu Pusing Per Divisi (Menu Sistem Nomor 7)
 def recapTotalJumlahKaryawanPerDivisi():
     for key, value in dataPerusahaan.items():
-        print(f'Divisi: {key} memiliki: {len(dataPerusahaan[key])} karyawan\n')
+        print(f'\nDivisi: {key} memiliki: {len(dataPerusahaan[key])} karyawan\n')
 
 
 # Fungsi untuk mengetahui gaji karyawan Per Divisi PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 8)
@@ -128,8 +140,8 @@ def rataRataGajiKaryawanPerDivisi():
             totalGajiKaryawanPerDivisi += dataPerusahaan[firstKey][secondKey]['Gaji']
 
         totalRataRataGajiPerDivisi = totalGajiKaryawanPerDivisi / len(dataPerusahaan[firstKey])
-        print(f'\nTotal Gaji Divisi {firstKey} adalah: Rp{totalGajiKaryawanPerDivisi:,.0f}')
-        print(f'Rata-Rata Gaji Divisi {firstKey} Per Bulan adalah: Rp{totalRataRataGajiPerDivisi:,.0f} dengan jumlah karyawan di divisi {firstKey} adalah: {len(dataPerusahaan[firstKey])}')
+        print(f'Total Gaji Divisi {firstKey} adalah: Rp{totalGajiKaryawanPerDivisi:,.0f} dengan jumlah karyawan di divisi {firstKey} adalah: {len(dataPerusahaan[firstKey])}')
+        print(f'Rata-Rata Gaji Divisi {firstKey} Per Bulan adalah: Rp{totalRataRataGajiPerDivisi:,.0f}\n')
 
         # Untuk me-reset perhitungan total dan rata-rata gaji karyawan per divisi
         totalRataRataGajiPerDivisi = 0
@@ -191,7 +203,7 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk menambah karyawan baru 
     elif (userInput == 2):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menambahkan Data Karyawan Baru? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Menambahkan Data Karyawan Baru? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -237,9 +249,9 @@ while isLoopingEligible:
     ##################################################################### END OF USER INPUT = 2 ##############################################################
 
 
-    # Jika user memilih menu untuk menghapus data karyawan  
+    # Jika user memilih menu untuk menghapus data karyawan baru 
     elif (userInput == 3):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Menghapus Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Menghapus Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -253,7 +265,7 @@ while isLoopingEligible:
                 userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
         
         else:
-            print('Berikut Adalah Divisi Yang Ada Di PT. Selalu Pusing')
+            print('\nBerikut Adalah Divisi Yang Ada Di PT. Selalu Pusing')
             listDivisi = list(dataPerusahaan.keys())
 
             for divisi in listDivisi:
@@ -264,13 +276,13 @@ while isLoopingEligible:
             while divisiYangDipilihUser not in listDivisi:
                 divisiYangDipilihUser = input('Nama Divisi Yang Dipilih Tidak Ada, Masukan Divisi Yang Benar: ')
 
-            print('Berikut Adalah Nama-Nama Karyawan Yang Ada Di PT. Selalu Pusing')
+            print(f'\nBerikut Adalah Nama-Nama Karyawan Yang Ada Di Divisi {divisiYangDipilihUser} PT. Selalu Pusing\n')
             listKaryawan = list(dataPerusahaan[divisiYangDipilihUser].keys())
 
             for karyawan in listKaryawan:
                 print(karyawan)
 
-            karyawanYangDipilihUser = input('Pilih Nama Karyawan Yang Ingin Di Hapus: ')
+            karyawanYangDipilihUser = input(f'Pilih Nama Karyawan Yang Ingin Di Hapus Dari Divisi {divisiYangDipilihUser}: ')
         
             menghapusKaryawanBerdasarkanNama(divisiYangDipilihUser, karyawanYangDipilihUser, listKaryawan)
 
@@ -286,7 +298,7 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk meng-update data karyawan 
     elif (userInput == 4):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Mengubah Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Mengubah Data Karyawan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -300,7 +312,7 @@ while isLoopingEligible:
                 userInput = int(input('\nMasukan Angka Menu Yang Ingin Anda Jalankan (eg. 1,2,3,4,5,6,7,8,9) atau Masukan Angka 99 untuk mengakhiri sistem: '))
 
         else:
-            print('\nBerikut Adalah Divisi Yang Ada Di PT. Selalu Pusing')
+            print('\nBerikut Adalah Divisi Yang Ada Di PT. Selalu Pusing\n')
             listDivisi = list(dataPerusahaan.keys())
 
             for divisi in listDivisi:
@@ -312,18 +324,18 @@ while isLoopingEligible:
             while divisiYangDipilihUser not in listDivisi:
                 divisiYangDipilihUser = input('Nama Divisi Yang Dipilih Tidak Ada, Masukan Divisi Yang Benar: ')
 
-            print('\nBerikut Adalah Nama-Nama Karyawan Yang Ada Di PT. Selalu Pusing')
+            print(f'\nBerikut Adalah Nama-Nama Karyawan Yang Ada Di Divisi {divisiYangDipilihUser} PT. Selalu Pusing\n')
             listKaryawan = list(dataPerusahaan[divisiYangDipilihUser].keys())
 
             for karyawan in listKaryawan:
                 print(karyawan)
            
-            karyawanYangDipilihUser = input('Pilih Nama Karyawan Yang Ingin Diubah: ')
+            karyawanYangDipilihUser = input('Pilih Nama Karyawan Yang Ingin Diubah Datanya: ')
 
             while karyawanYangDipilihUser not in listKaryawan:
                 karyawanYangDipilihUser = input('Nama Karyawan Tidak Ada, Input Nama Karyawan Yang Benar: ')
 
-            print('Berikut Adalah Field Yang Bisa Di Ubah')
+            print('\nBerikut Adalah Field Yang Bisa Di Ubah\n')
             tempListFieldKaryawan = []
 
             # Looping ini hanya untuk mengambil Field-Field yang dimiliki karyawan
@@ -367,7 +379,7 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk memindahkan karyawan ke divisi lain
     elif (userInput == 5):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Memindah Karyawan Ke Divisi Lain? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Memindah Karyawan Ke Divisi Lain? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -383,13 +395,12 @@ while isLoopingEligible:
         else:
             menampilkanSemuaDataKaryawan()
 
-            print('Pilih Divisi Karyawan Sebelumnya: ')
             listDivisi = list(dataPerusahaan.keys())
 
             for divisi in listDivisi:
                 print(divisi)
 
-            divisiKaryawanLama = input('Pilih Divisi Karyawan Yang Ingin Dipindah: ')
+            divisiKaryawanLama = input('Pilih Divisi Lama Karyawan Yang Ingin Dipindah: ')
 
             while divisiKaryawanLama not in listDivisi:
                 divisiKaryawanLama = input('Nama Divisi Yang Dipilih Tidak Ada, Masukan Divisi Yang Benar: ')
@@ -398,7 +409,7 @@ while isLoopingEligible:
             while len(dataPerusahaan[divisiKaryawanLama]) == 0:
                 divisiKaryawanLama = input(f'Divisi {divisiKaryawanLama} Tidak Memiliki Karyawan, Silahkan Pilih Divisi Yang Lain: ')
 
-            print('Berikut Adalah Nama Karyawan-Karyawannya: ')
+            print(f'\nBerikut Adalah Nama Karyawan-Karyawan divisi {divisiKaryawanLama}: ')
             listKaryawan = list(dataPerusahaan[divisiKaryawanLama].keys())
 
             for karyawan in listKaryawan:
@@ -409,7 +420,7 @@ while isLoopingEligible:
             while karyawanYangInginDipindah not in listKaryawan:
                 karyawanYangInginDipindah = input('Nama Karyawan Tidak Ada, Input Nama Karyawan Yang Benar: ')
 
-            print('Silahkan Pilih Divisi Untuk Karyawan Yang Ingin Dipindah: ')
+            print('\nSilahkan Pilih Divisi Untuk Karyawan Yang Ingin Dipindah: ')
             listDivisi = list(dataPerusahaan.keys())
 
             for divisi in listDivisi:
@@ -434,7 +445,7 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk melihat recap total karyawan PT.Selalu Pusing 
     elif (userInput == 6):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Recap Total Karyawan PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Melihat Recap Total Karyawan PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -462,7 +473,7 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk melihat recap total karyawan PT.Selalu Pusing Per divisi
     elif (userInput == 7):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Recap Total Karyawan Per Divisi PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Melihat Recap Total Karyawan Per Divisi PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -488,9 +499,9 @@ while isLoopingEligible:
     ##################################################################### END OF USER INPUT = 7 #############################################################
 
 
-    # Jika user memilih menu untuk melihat rata-rata gaji karyawan PT.Selalu Pusing per divisi per bulan
+    # Jika user memilih menu untuk melihat recap total gaji karyawan PT.Selalu Pusing per divisi per bulan
     elif (userInput == 8):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji Per Divisi PT.Selalu Pusing Per Bulan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Melihat Rata-Rata Gaji Per Divisi PT.Selalu Pusing Per Bulan? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
@@ -517,7 +528,7 @@ while isLoopingEligible:
 
     # Jika user memilih menu untuk mengetahui rata-rata gaji PT.Selalu Pusing 
     elif (userInput == 9):
-        userInginMenlanjutkanPilihan = input('Apakah Anda Ingin Melihat Rata-Rata Gaji PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
+        userInginMenlanjutkanPilihan = input('\nApakah Anda Ingin Melihat Rata-Rata Gaji PT.Selalu Pusing? Input Y untuk melanjutkan, T untuk kembali ke menu utama: ')
 
         while userInginMenlanjutkanPilihan != 'Y' and userInginMenlanjutkanPilihan != 'T':
             userInginMenlanjutkanPilihan = input('Masukan Input Yang Benar, Y untuk melanjutkan, T untuk kembali ke menu utama: ')
