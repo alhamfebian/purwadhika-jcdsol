@@ -74,8 +74,6 @@ def menambahKaryawanBaru(divisiKaryawanBaru, namaLengkapKaryawanBaru, jenisKelam
     # Untuk validasi apakah nama karyawan sudah atau belum di divisi tersebut
     while tempNamaKaryawan in dataPerusahaan[divisiKaryawanBaru]:
         tempNamaKaryawan = input('Nama Karyawan Sudah Ada, Silahkan Masukan Nama Karyawan Yang Lain: ')
-
-    jenisKelaminKaryawanBaru = validasiJenisKelamin(jenisKelaminKaryawanBaru)
     
     dataPerusahaan[divisiKaryawanBaru][tempNamaKaryawan] = {
         'Jenis Kelamin': jenisKelaminKaryawanBaru,
