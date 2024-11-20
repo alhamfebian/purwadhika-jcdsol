@@ -146,7 +146,7 @@ def rataRataGajiKaryawanPerDivisi():
         totalGajiKaryawanPerDivisi = 0
 
 
-# Fungsi untuk mengetahui gaji karyawan Per Divisi PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 9)
+# Fungsi untuk mengetahui gaji karyawan PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 9)
 def rataRataGajiPerusahaan():
     totalGajiKaryawan = 0
     totalKaryawan = 0
