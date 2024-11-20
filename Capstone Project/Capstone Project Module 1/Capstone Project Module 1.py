@@ -128,7 +128,7 @@ def recapTotalJumlahKaryawanPerDivisi():
         print(f'\nDivisi: {key} memiliki: {len(dataPerusahaan[key])} karyawan\n')
 
 
-# Fungsi untuk mengetahui gaji karyawan Per Divisi PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 8)
+# Fungsi untuk mengetahui rata-rata gaji karyawan Per Divisi PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 8)
 def rataRataGajiKaryawanPerDivisi():
     totalGajiKaryawanPerDivisi = 0
     totalRataRataGajiPerDivisi = 0
@@ -146,7 +146,7 @@ def rataRataGajiKaryawanPerDivisi():
         totalGajiKaryawanPerDivisi = 0
 
 
-# Fungsi untuk mengetahui gaji karyawan PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 9)
+# Fungsi untuk mengetahui rata-rata gaji karyawan PT. Selalu Pusing Per Bulan (Menu Sistem Nomor 9)
 def rataRataGajiPerusahaan():
     totalGajiKaryawan = 0
     totalKaryawan = 0
