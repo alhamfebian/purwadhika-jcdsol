@@ -28,5 +28,5 @@ My Assignment is, I'm a Data Analyst in the SaaS Company that will give some ins
 **NB:** Actually, there are some outliers in SaaS Sales dataset and i already tried to seperate the outlier. But when i did more deeper Exploratory data analysis (EDA) and did some research, outlier data can be important in Sales, because with outlier data you can find something insightful and do more deeper analysis.
 Because of that, i did **not** separate the outlier data and do the analysis with outlier data
 
-**Here is the code when i separate the outlier data:**
+**Here is the code when i separate the outlier data (after visualization Effect of Discount on Total Profit):**
 https://github.com/alhamfebian/purwadhika-jcdsol/blob/3096ed49bbab7478a6e16838d7109a68c08de19c/Capstone%20Project/Capstone%20Project%20Module%202/capstone_project_module_2.ipynb
