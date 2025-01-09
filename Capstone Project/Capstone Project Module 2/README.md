@@ -4,6 +4,7 @@ Capstone Project Module 2 is a project from Purwadhika to assess participants' u
 
 ## Module 2 Materials
 - Statistic
+- SQL
 - Data Analyst
 - Data Visualization
 
