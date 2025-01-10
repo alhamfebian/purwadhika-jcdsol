@@ -40,3 +40,6 @@ Link: https://public.tableau.com/shared/NH3M86DG2?:display_count=n&:origin=viz_s
 - **Total Profit and Total Sales:** The dashboard highlights the overall total profit and total sales, allowing us to identify which products or country contribute the most to the company's revenue
 - **Effect of Discount on Total Profit:** The dashboard shows how discounts affect overall profit, helping the company evaluate its discount strategies
 - **Sales and Profit Distribution:** Visualize sales and profit distribution by Map to easier to see which country has high or low sales or profit
+
+## Video Presentation
+Link: https://drive.google.com/drive/folders/1xVefm4T-kGSqYzjfoPJTL7tQ6KZhWTfc?usp=sharing
